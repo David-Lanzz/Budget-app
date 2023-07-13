@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: Davidrama
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: BudgetApp-DB-Dev
+test:
+  <<: *default
+  database: BudgetApp-DB-Test
+
+production:
+  <<: *default
+  database: BudgetApp-DB-Pro

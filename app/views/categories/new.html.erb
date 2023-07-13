@@ -1,0 +1,27 @@
+ <div class="w-full header flex items-center justify-center">
+  <h1 class="text-center mb-2">New Category</h1>
+  </div>
+
+<%= form_with(model: @category, url: user_categories_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "w-full h-4" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Category %>
+    <%= form.select :icon, options_for_select([
+      ["Education", "education"],
+      ["Romance", "romance"],
+      ["Adventure", "adventure"],
+      ["Fantasy", "fantasy"],
+      ["Mystery", "mystery"],
+      ["Science Fiction", "science_fiction"],
+      ["Thriller", "thriller"]
+    ], selected: "romance"), class: "w-full h-4" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Category' %>
+  </div>
+<% end %>

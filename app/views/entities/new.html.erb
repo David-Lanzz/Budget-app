@@ -1,0 +1,20 @@
+<div class="w-full header flex items-center justify-center">
+    <h1 class="text-center mb-2">New Entity</h1>
+  </div>
+<%= form_with(model: [@category, @entity], url: user_category_entities_path(user_id: current_user.id, category_id: @category.id), local: true) do |form| %>
+  <%= form.hidden_field :category_id %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "w-full h-4" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, class: "w-full h-4" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Entity' %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<div class="flex flex-col items-center justify-center w-full h-full gap-4">
+  <h1 class="text-center">Welcome <%= @user.name %></h1>
+  <div class="flex flex-col"><%= link_to 'Click me', user_categories_path(current_user), class: "button-animation text-center " %>
+  <p class="text-center ">to see your categories</p>
+  </div>
+
+</div>

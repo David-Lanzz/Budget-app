@@ -1,0 +1,30 @@
+ <%= render 'shared/sign' %>
+<div class="w-full h-full flex flex-col">
+  <div class="w-full header flex items-center justify-between">
+    <i class="fa-solid fa-bars" onclick="toggleNavigation()"></i>
+    <h1 class="text-center mb-2">Categories</h1>
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+  <section class="flex flex-col items-center section">
+    <% @categories.each_with_index do |category, index| %>
+      <a class="flex mb-2 category-details-container w-full gap-2 entity items-center" href="<%= user_category_path(current_user, category) %>">
+        <%= image_tag(category.icon, class: "icon") %>
+        <div class="flex flex-col">
+          <p><%= category.name %></p>
+          <p><%= category.created_at.strftime("%d %b, %Y") %></p>
+        </div>
+        <h3>$<%= @total_prices[index] %></h3>
+      </a>
+    <% end %>
+  </section>
+  <footer class="w-full flex justify-center items-center">
+    <%= link_to 'Add a New Category', new_user_category_path,class: "new-category w-full flex justify-center items-center" %>
+  </footer>
+</div>
+
+<script>
+  function toggleNavigation() {
+    var navigationContainer = document.getElementById("signout-container");
+    navigationContainer.style.display = navigationContainer.style.display === "none" ? "flex" : "none";
+  }
+</script>

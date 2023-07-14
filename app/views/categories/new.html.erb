@@ -1,5 +1,9 @@
- <div class="w-full header flex items-center justify-center">
+ <div class="w-full header flex items-center justify-between">
+  <%= link_to user_categories_path do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
   <h1 class="text-center mb-2">New Category</h1>
+  <div></div>
   </div>
 
 <%= form_with(model: @category, url: user_categories_path, local: true) do |form| %>

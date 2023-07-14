@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.includes(:entities).find(params[:id])
     @entities = @category.entities
+    @total_price = @entities.sum(:amount)
   end
 
   def new

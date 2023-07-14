@@ -5,6 +5,9 @@
     <h1 class="text-center mb-2"><%= @category.name %></h1>
     <i class="fa-solid fa-magnifying-glass"></i>
   </div>
+  <div class="w-full">
+    <h3 class="text-center">Total Amount Spent: $<%= @total_price %> </h3>
+  </div>
   <section class="section">
   <% @entities.each do |entity| %>
     <div class="flex mb-2 category-details-container w-full gap-2 entity items-center">
@@ -15,7 +18,8 @@
   <% end %>
   </section>
   <footer class="w-full flex justify-center items-center">
-    <a class="new-category w-full flex justify-center items-center" href="<%= new_user_category_entity_path(user_id: current_user.id, category_id: @category.id) %>">Create New Entity</a>
+    <a class="new-category w-full flex justify-center items-center"
+     href="<%= new_user_category_entity_path(user_id: current_user.id, category_id: @category.id) %>">Create New Transaction</a>
   </footer>
 </div>
 <script>

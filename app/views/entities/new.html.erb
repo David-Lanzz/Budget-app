@@ -1,5 +1,9 @@
-<div class="w-full header flex items-center justify-center">
-    <h1 class="text-center mb-2">New Entity</h1>
+<div class="w-full header flex items-center justify-between">
+    <%= link_to user_category_path(user_id: current_user.id, id: @category.id) do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+  <h1 class="text-center mb-2">New Transaction</h1>
+  <div></div>
   </div>
 <%= form_with(model: [@category, @entity], url: user_category_entities_path(user_id: current_user.id, category_id: @category.id), local: true) do |form| %>
   <%= form.hidden_field :category_id %>

@@ -139,3 +139,20 @@ footer {
 #signout-container {
   display: none;
 }
+
+.py-4 {
+  padding: 2rem 0;
+}
+
+.btn {
+  border: #fff solid 1px;
+  height: 3rem;
+  width: 100%;
+  background-color: rgb(72, 72, 190);
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.px-4 {
+  padding: 0 2rem;
+}

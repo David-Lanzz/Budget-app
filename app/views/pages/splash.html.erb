@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BudgetApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/10e6eafe5a.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <div class="splash-screen w-full h-full flex flex-col gap-4 py-4">
+      <h1 class="text-center">Welcome to Book Crib</h1>
+      <p class="text-center">Please sign in or sign up to continue.</p>
+      <div class="flex gap-4 w-full justify-center flex-col px-4">
+      <%= link_to 'Sign In', new_user_session_path, class: 'btn flex justify-center items-center' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn flex justify-center items-center' %>
+      </div>
+    </div>
+  </body>
+</html>

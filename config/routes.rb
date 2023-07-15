@@ -2,7 +2,8 @@
 
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
   }
 
   resources :users, only: [:index] do
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
 
   get '/sign_out_user', to: 'users#sign_out_user', as: 'sign_out_user'
 
-  root 'users#index'
+  root 'pages#splash'
 end

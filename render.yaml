@@ -1,0 +1,19 @@
+databases:
+  - name: Lanzz-DB
+
+    databaseName: lanzzdb
+    user: lanzz
+
+services:
+  - type: web
+    name: books-crib
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: lanzzdb
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
